@@ -1,0 +1,105 @@
+h1{
+  text-align: center;
+}
+
+footer{
+  font-size: 18px;
+  color: hsl(0, 0%, 85%, 0.6);
+  position: absolute;
+  bottom: 10px;
+  left:15px;
+  letter-spacing: 0.8px;          
+  text-transform: uppercase;    
+}
+
+.component-wrapper{
+  position: relative;
+  padding: 20px;
+  margin: 0;
+  border:2px solid hsl(0, 0%, 20%);
+  border-radius: 3px;
+
+  background-image: var(--bg-img);
+  /* url(assets/natural.jpg); 
+  url(assets/darksky.jpg);
+  */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height:35vh;
+  margin-bottom: 8px;
+}
+
+.clock-container{
+  backdrop-filter: blur(2px);
+  width: 35vw;
+}
+
+.clock{
+  color:white;
+  font-size:3rem;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: 3px 3px 10px hsl(0, 0%, 0%, 0.75);
+  font-weight: bold;
+}
+
+.natural-img{
+  --bg-img:url(assets/natural.jpg); 
+}
+
+.darksky-img{
+  --bg-img:url(assets/darksky.jpg);
+}
+
+.timer-display{
+  font-size: 3rem;
+  font-weight: bold;
+  color:white;
+  padding: 1px;
+  text-shadow: 3px 3px 10px hsl(0, 0%, 0%, 0.9);
+  font-family: sans-serif;
+  backdrop-filter: blur(2px);
+}
+
+.button-container button{
+  font-size: 2rem;
+  cursor: pointer;
+  border: 1px solid hsl(0, 0%, 0%, 0.3);
+  border-radius: 7px;
+  padding: 3px 5px;
+  margin: 3px;
+  min-width: 110px;
+  transition: background-color 0.5s ease;
+  color:white;
+}
+
+.btn-start{
+  background-color: hsl(138, 40%, 45%); 
+}
+
+.btn-start:hover{
+  background-color: hsl(140, 40%, 38%); 
+}
+
+.btn-stop{
+  background-color: hsl(0, 45%, 50%);
+}
+
+.btn-stop:hover{
+  background-color: hsl(0, 45%, 42%);
+}
+
+.btn-reset{
+  background-color: hsl(214, 45%, 48%);
+}
+
+.btn-reset:hover{
+  background-color: hsl(214, 45%, 40%);
+}
