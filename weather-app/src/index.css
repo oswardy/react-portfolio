@@ -1,0 +1,141 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+body{
+    background-image: url(assets/sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+    overflow-x:hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.weather-container{
+    text-align: center;
+    align-items: center;
+    border: none;
+    border-radius: 40px;
+    background-color:hsla(209, 100%, 85%, 0.2);
+    margin: 40px auto;      
+    max-width: 900px;       
+    padding: 20px;
+    min-height: 60vh;
+    width:100%;
+}
+
+.weather-card-wrapper{
+    margin:-20px;
+}
+
+.weather-card-wrapper h2 {
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.weather-card-wrapper > p {
+    margin-top:-10px;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+.input-search{
+    display: block;
+    width:100%;
+    max-width: 300px;
+    padding: 8px 13px;
+    margin: 30px auto;
+    border: 1px solid hsl(207, 35%, 60%, 0.9);
+    font-size: 1.2rem;
+    border-radius: 28px;
+    background-color:hsla(209, 90%, 85%, 0.9);
+} 
+
+
+.weather-main{
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+}
+
+.weather-left {
+  font-family: system-ui, sans-serif; /* ← change this */
+  font-size: 1.2rem;
+}
+
+.weather-left p:first-of-type { /* only the temp */
+  font-family: 'Roboto Mono', 'SF Mono', Consolas, monospace;
+  font-size: 1.8rem; /* make it big */
+  font-weight: bold;
+}
+
+
+.weather-right{
+    flex: 1;
+    font-size: 1.3rem;
+    margin:10px;
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    background-color:hsla(209, 100%, 83%, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.weather-right > div {
+    flex: 0 0 calc(33.33% - 10px); /* 3 items per row */
+    text-align: center;
+}
+
+.weather-right p {
+    margin: 15px;
+    line-height: 1.1;
+}
+
+.weather-right p:first-child {
+    font-size: 1.5rem;
+    font-family: 'Roboto Mono', 'SF Mono', Consolas, monospace;
+}
+
+.weather-right p:last-child {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+
+.weather-forecast{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+ 
+}
+
+.forecast-item {
+    background-color: hsla(209, 100%, 72%, 0.4);
+    border-radius: 12px;
+    padding: 4px;
+    text-align: center;
+    margin:15px;
+    flex: 1;
+}
+
+.forecast-item p:first-child {
+    font-size: 1.1rem;
+}
+
+.forecast-item p:last-child {
+    font-family: 'Roboto Mono', 'SF Mono', Consolas, monospace;
+    font-size: 1.2rem;
+}
