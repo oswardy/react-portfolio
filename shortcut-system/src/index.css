@@ -1,0 +1,326 @@
+body{
+    background-color: hsl(0, 0%, 60%, 0.4);
+    margin:0;
+}
+
+
+.container{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+
+.shortcuts-container{
+    background-color: white;
+    padding: 6px;
+    max-height: calc(100vh - 40px);  /* ← Almost full screen */
+    overflow-y: auto; 
+    margin: 9px; 
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 3px;
+    flex:1;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+
+.btn-add{
+    cursor: pointer;
+    border: solid 1px hsl(0, 0%, 20%, 0.5);
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: black;
+    background-color: white;
+    margin: 3px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-add:hover{
+   border-color: hsl(211, 100%, 50%);
+   color: hsl(211, 100%, 40%);  
+}
+
+.add-modal{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 90px;
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index: 1000;
+    background-color: hsl(0, 0%, 0%, 0.6);
+
+}
+
+.modal{
+    background-color: hsl(0, 0%, 100%);
+    border: 1px solid hsl(0, 0%, 40%);
+    border-radius: 8px;
+    padding: 45px 40px;
+    color: black;
+    width:100%;
+    max-width: 500px;
+    min-height: 20vh;
+    box-shadow: 0 4px 20px hsla(0, 0%, 0%, 0.5);
+}
+
+.modal-content{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:40px;
+    margin-bottom:30px;
+    flex-wrap: wrap;
+}
+
+.modal-name{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap:12px;
+}
+
+.modal-name label,
+.modal-text label {
+    width: 100px;         /* Same width for both */
+    text-align: right;    /* Right-align label text */
+    flex-shrink: 0;   
+    font-size: 1.6rem;    /* Don't shrink */
+}
+
+.modal-name input,
+.modal-text input {
+    flex: 1;              /* Inputs take remaining space */
+}
+
+.modal-text{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap:12px;
+}
+
+
+
+.btn-actions{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+
+}
+
+.btn-actions button{
+    font-size: 1.2rem;
+    cursor: pointer;
+    
+    border-radius: 4px;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-create{
+    background-color: hsl(211, 100%, 50%);
+    border: 1px solid hsl(211, 100%, 40%);
+    color:white;
+}
+
+.btn-cancel{
+    border: 1px solid hsl(0, 0%, 30%, 0.7);
+    background-color: transparent;
+    
+}
+
+.btn-create:hover {
+    background-color: hsl(211, 100%, 60%);  
+    border-color: hsl(211, 100%, 60%);
+}
+
+.btn-cancel:hover {
+    border: 1px solid hsl(211, 100%, 50%);                         
+}
+
+.modal-text input:disabled {
+  background-color: hsl(0, 0%, 80%, 0.4);
+  cursor: not-allowed;
+}
+
+.item-container{
+    display:flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 25px;
+    background-color: hsl(0, 0%, 90%, 0.3);
+    border:none;
+    border-radius: 25px;
+    min-height: 22vh;
+    margin: 12px 10px 0 10px;
+}
+
+.item-card{
+    border: 1px solid hsl(0, 4%, 75%);
+    background-color: hsl(0, 0%, 100%); /*hover 0.9*/
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex:1 1 200px;
+    min-width: 50px;
+    max-width: 200px;
+    min-height: 20vh;
+    width: 100%;
+    cursor: pointer;
+    margin: 22px 30px;
+    position: relative;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.items{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item-card:hover {
+  border-color: hsl(211, 100%, 50%);          
+  box-shadow: 0 4px 12px hsla(211, 100%, 50%, 0.15);  
+  transform: translateY(-2px);                  /* lift up 2px */
+}
+
+
+.btn-delete{
+    position: absolute;
+    top:8px;
+    right:8px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-delete:hover {
+  color: hsl(0, 70%, 50%);  
+}
+
+
+.btn-edit{
+    position: absolute;
+    top:8px;
+    right:34px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.btn-edit:hover {
+  color: hsl(211, 70%, 45%);  
+}
+
+.header-item{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap:20px;
+    padding: 0 10px;
+}
+
+.breadcrumbs{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    font-size: 0.95rem;
+    color:hsl(0, 0%, 22%, 0.9);
+    gap: 6px;
+}
+
+.crumb{
+    cursor:pointer;
+}
+
+.crumb:hover{
+    color:hsl(0, 0%, 15%, 0.6);
+    transition: color 0.2 ease;
+}
+
+.separator{
+    cursor: default;
+    color: hsl(0, 0%, 60%);
+}
+
+.display-title{
+    display:flex;
+    gap: 10px;
+}
+
+.btn-back{
+    cursor: pointer;
+
+}
+
+.btn-back:hover{
+   color: hsl(211, 100%, 50%); 
+    
+}
+
+.title{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+
+.side-menu{
+    background-color: hsl(209, 100%, 5%);
+    width: 100%;
+    max-width: 200px;
+    min-height: 100vh;
+    padding: 14px 0px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu-item{
+    
+    padding: 2px 18px;
+    display: flex;
+    color: hsl(0, 5%, 65%);
+    gap: 20px;
+    font-size: 1.1rem; 
+    cursor: pointer;
+}
+
+.side-menu-item:hover{
+    background-color: hsl(209, 95%, 15%, 0.9);
+}
+
+.side-menu-item.active{
+    background-color: hsla(209, 93%, 30%, 0.9);
+    color:white;
+}
+
+.delete-confirm{
+    font-size: 1.5rem;
+    padding: 12px 1px
+}
+
+.error{
+    color:red;
+    display: flex;
+    justify-content: center;
+}
