@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SideMenu from './SideMenu.jsx'
 import AddItem from './AddItem.jsx'
 import ItemsCard from './ItemsCard.jsx'
@@ -6,14 +6,21 @@ import Breadcrumbs from './Breadcrumbs.jsx'
 
 
 export default function App() {
-  const [shortcuts, setShortcuts] = useState([]);
+  // const [shortcuts, setShortcuts] = useState([]);
+  const [shortcuts, setShortcuts] = useState(() => {
+  const saved = localStorage.getItem('shortcuts');
+    return saved ? JSON.parse(saved) : [];
+  });
   const [currentPath, setCurrentPath] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [pendingDelete, setPendingDelete] = useState(null);
   const [editingItem, setEditingItem] = useState(null);
 
+  useEffect(() => {
+    localStorage.setItem('shortcuts', JSON.stringify(shortcuts));
+  }, [shortcuts]);
+
   let currentItems;
-    
   if(currentPath.length === 0){
     //home
     currentItems = shortcuts.filter(i => i.type === 'folder');
