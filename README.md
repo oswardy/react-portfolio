@@ -48,7 +48,7 @@ React, Vite, CSS, Firebase, OpenWeatherMap API, OMDb API
 
 ## How to Run
 
-\`\`\`bash
+```bash
 npm install
 npm run dev
-\`\`\`
+```
