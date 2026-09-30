@@ -13,7 +13,7 @@ export default function WeatherSearch({onSearch}){
                         onSearch(weatherInput);
                     }
                 }}
-                placeholder='Enter City Name..'/>
+                placeholder='Search City... (Enter to search)'/>
             {/* <button className="search-btn" onClick={()=> onSearch(weatherInput)}>Search</button> */}
         </div>
     )

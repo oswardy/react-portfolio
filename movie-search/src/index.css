@@ -18,10 +18,10 @@ body{
 .search-input{
   border: none;
   border-radius: 25px;
-  padding: 10px 30px;
+  padding: 9px 20px;
   width: 100%;
   max-width: 300px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .error{

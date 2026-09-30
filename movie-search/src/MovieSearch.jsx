@@ -5,7 +5,7 @@ export default function MovieSearch({onSearch}){
 
     return(
         <div>
-            <input className="search-input" placeholder="Enter movie name"
+            <input className="search-input" placeholder="Search Movie... (Enter to search)"
             value={input} onChange={e=> setInput(e.target.value)}
             onKeyDown={e => {
                 if(e.key === "Enter"){
